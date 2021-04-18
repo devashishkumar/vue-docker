@@ -9,6 +9,6 @@ RUN npm run build --prod
 ### STAGE 2: Run ###
 FROM nginx:1.19.1-alpine
 ### COPY nginx.conf /etc/nginx/nginx.conf
-COPY  --from=builder /DockerVueApp/dist/docker-vue-app /usr/share/nginx/html
+COPY  --from=builder /DockerVueApp/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
